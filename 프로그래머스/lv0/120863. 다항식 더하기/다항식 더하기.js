@@ -1,19 +1,19 @@
 function solution(polynomial) {
-    const polyArr = polynomial.split(" + ");
+    const poly = polynomial.split(" + ");
     
-    let xNum = 0;
+    let numX = 0;
     let num = 0;
     
-    polyArr.forEach((item) => {
+    poly.forEach((item) => {
         if(item.includes("x")){
             const xArr = item.split("x");
             
             if(xArr[0] === ""){
-                xNum += 1;
+               numX += 1;
             }
             
             if(xArr[0] !== ""){
-                xNum += Number(xArr[0]);
+                numX += Number(xArr[0]);
             }
         }
         
@@ -22,19 +22,19 @@ function solution(polynomial) {
         }
     })
     
-    if(xNum !== 0 && num !== 0){
-        return xNum === 1 ? `x + ${num}` : `${xNum}x + ${num}`;    
+    if(numX !== 0 && num !== 0){
+        return numX === 1 ? `x + ${num}` : `${numX}x + ${num}`;    
     }
     
-    if(xNum !== 0 && num === 0){        
-        return xNum === 1 ? "x" : `${xNum}x`;
+    if(numX !== 0 && num === 0){        
+        return numX === 1 ? "x" : `${numX}x`;
     }
     
-    if(xNum === 0 && num !== 0){
+    if(numX === 0 && num !== 0){
         return `${num}`;
     }
     
-    if(xNum === 0 && num === 0){
+    if(numX === 0 && num === 0){
         return "0";
     }
 }
