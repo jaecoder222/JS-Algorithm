@@ -9,4 +9,3 @@ function solution(absolute, signs) {
   }
   return answer.reduce((a, b) => a + b, 0)
 }
-solution([4, 7, 12], [true, false, true]);
